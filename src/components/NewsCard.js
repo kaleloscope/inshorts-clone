@@ -20,7 +20,6 @@ const NewsCard = ({newsItem}) => {
                 <div className = "lowerText">
                     <div className = "description">{newsItem.description}</div>
                     
-                    
                 </div>
                 <div className = "readMore">
                     <span>
@@ -30,6 +29,7 @@ const NewsCard = ({newsItem}) => {
                         </a>
                     </span>
                     </div>
+                
             </div>
             
         </div>

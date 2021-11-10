@@ -28,7 +28,7 @@
     padding: 0 0 0 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: inherit;
   }
   
   .author {
@@ -37,15 +37,15 @@
     line-height: 22px;
     color: #808290;
   }
-  .lowerNewsText {
+  .lowerText {
     display: flex;
     flex-direction: column; 
-    justify-content: space-evenly; 
+    justify-content: space-between; 
     flex: 1;
     padding: 10px 0;
   }
   
-  .readmore {
+  .readMore {
     font-size: 12px;
     font-weight: 400;
     padding-top: 10px;
@@ -57,7 +57,7 @@
   }
   .description {
     font-size: 16px;
-    /* line-height: 22px; */
+    line-height: 22px;
     color: #44444d;
   }
 
