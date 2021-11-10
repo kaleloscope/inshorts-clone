@@ -12,6 +12,16 @@ const NewsContent = ({ newsArray, loadMore, setLoadMore, newsResults }) => {
                         <NewsCard newsItem = {newsItem} key = {newsItem.title}/>
                     ))
                 }
+                {
+                    loadMore <= newsResults && (
+                        <>
+                            <hr/>
+                            <button className = "loadMore" onClick = {() => setLoadMore(loadMore+20)}>
+                                Load More
+                            </button>
+                        </>
+                    )
+                }
             </div>
         </Container>
     )
