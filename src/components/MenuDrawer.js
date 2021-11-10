@@ -12,8 +12,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import categories from '../data/categories';
 
-export default function TemporaryDrawer() {
+export default function MenuDrawer({setCategory}) {
   const [state, setState] = React.useState({
     
     left: false,
@@ -26,7 +27,7 @@ export default function TemporaryDrawer() {
     () =>
       createTheme({
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
+          mode: prefersDarkMode ? "dark" : "light",
         },
       }),
     [prefersDarkMode]
@@ -43,28 +44,26 @@ export default function TemporaryDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 200 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+        
+          <ListItem>
+              CATEGORIES
+
           </ListItem>
-        ))}
+        
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
+        {categories.map((text, index) => (
+          <ListItem button key={text} onClick = {() => setCategory(text)}>
+            {/* <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
+            </ListItemIcon> */}
             <ListItemText primary={text} />
           </ListItem>
         ))}
